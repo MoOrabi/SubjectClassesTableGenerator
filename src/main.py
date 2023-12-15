@@ -192,6 +192,7 @@ def put_lectures_classes(course_name, course_code, number_of_lectures, preferred
         subject_class = {"course_name": course_name, "course_code": course_code,
                          "type_of_class": "Lecture", "faculty_member": professor,
                          "day": chooses_day_and_time.get("day"), "time": chooses_day_and_time.get("time")}
+        level_times.append({"day":chooses_day_and_time.get("day"), "time": chooses_day_and_time.get("time")})
         level_classes.append(subject_class)
 
 
@@ -202,6 +203,7 @@ def put_sections_classes(course_name, course_code, number_of_sections, preferred
         subject_class = {"course_name": course_name, "course_code": course_code,
                          "type_of_class": "Section", "faculty_member": assistant,
                          "day": chooses_day_and_time.get("day"), "time": chooses_day_and_time.get("time")}
+        level_times.append({"day": chooses_day_and_time.get("day"), "time": chooses_day_and_time.get("time")})
         level_classes.append(subject_class)
 
 
@@ -212,6 +214,7 @@ def put_labs_classes(course_name, course_code, number_of_labs, preferred_assista
         subject_class = {"course_name": course_name, "course_code": course_code,
                          "type_of_class": "Lab", "faculty_member": assistant,
                          "day": chooses_day_and_time.get("day"), "time": chooses_day_and_time.get("time")}
+        level_times.append({"day": chooses_day_and_time.get("day"), "time": chooses_day_and_time.get("time")})
         level_classes.append(subject_class)
 
 
