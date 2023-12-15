@@ -62,10 +62,10 @@ level1_courses_list = [
 
 level2_courses_list = [
     ["Cybersecurity Basics", "207", 1, 2, 2,
-     "Hassan Ali", "Mohamed Ibrahim", "Omar Samir",
+     ["Hassan Ali", "Mohamed Ibrahim", "Omar Samir"],
      ["Ali Mohammed", "Khaled Ahmed", "Osama Ismail"]],
     ["Web Development Fundamentals", "208", 1, 2, 2,
-     "Youssef Ahmed", "Karim Mohamed", "Mamdouh Adel",
+     ["Youssef Ahmed", "Karim Mohamed", "Mamdouh Adel"],
      ["Hany Youssef", "Mohsen Ali", "Sherif Ezzat"]],
     ["Artificial Intelligence Concepts", "209", 1, 2, 2,
      ["Amr Hossam", "Ali Mahmoud", "Tarek Hassan"],
