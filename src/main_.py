@@ -116,9 +116,13 @@ assign_classes_to_courses(4, "lab")
 
 
 
-
+# print courses data to verify that all courses have professors and assisstants
 for course in d.courses:
     print(course)
+
 print("*" * 40)
+
+# print the full table to check if table is ok
 pprint(d.full_table)
+
 
