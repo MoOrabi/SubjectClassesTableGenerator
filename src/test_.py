@@ -1,33 +1,29 @@
-import professor_ as p
-import course_ as c
-import level_ as l
-
 full_table = {1: {"sat": {"slot_1": None,
                           "slot_2": None,
                           "slot_3": None,
                           "slot_4": None,
                           "slot_5": None},
-              "sun": {"slot_1": None,
+                  "sun": {"slot_1": None,
                           "slot_2": None,
                           "slot_3": None,
                           "slot_4": None,
                           "slot_5": None},
-              "mon": {"slot_1": None,
+                  "mon": {"slot_1": None,
                           "slot_2": None,
                           "slot_3": None,
                           "slot_4": None,
                           "slot_5": None},
-              "tue": {"slot_1": None,
+                  "tue": {"slot_1": None,
                           "slot_2": None,
                           "slot_3": None,
                           "slot_4": None,
                           "slot_5": None},
-              "wed": {"slot_1": None,
+                  "wed": {"slot_1": None,
                           "slot_2": None,
                           "slot_3": None,
                           "slot_4": None,
                           "slot_5": None},
-              "thu": {"slot_1": None,
+                  "thu": {"slot_1": None,
                           "slot_2": None,
                           "slot_3": None,
                           "slot_4": None,
@@ -123,6 +119,8 @@ full_table = {1: {"sat": {"slot_1": None,
                           "slot_4": None,
                           "slot_5": None}}}
 
+# print(full_table[1]["sat"]["slot_1"])
+
 slots = {1: "slot_1",
          2: "slot_2",
          3: "slot_3",
@@ -136,58 +134,17 @@ days = {1: "sat",
         5: "wed",
         6: "thu"}
 
-professors = [p.Professor("1", "Ahmed Mohamed",  "101", "301", "305"),
-              p.Professor("2", "Hassan Ali",     "102", "302", "301"),
-              p.Professor("3", "Mohamed Ibrahim", "103", "303", "301"),
-              p.Professor("4", "Omar Samir",     "104", "304", "301"),
-              p.Professor("5", "Khaled Ahmed",   "105", "305", "301"),
-              p.Professor("6", "Amr Hossam",     "106", "306", "301"),
-              p.Professor("7", "Ali Mahmoud",    "201", "401", "301"),
-              p.Professor("8", "Tarek Hassan",   "202", "402", "301"),
-              p.Professor("9", "Mahmoud Sami",   "203", "403", "301"),
-              p.Professor("10", "Youssef Ahmed", "204", "404", "301"),
-              p.Professor("11", "Karim Mohamed", "205", "405", "301"),
-              p.Professor("12", "Mamdouh Adel",  "206", "406", "301")]
+# day, slot should be numbers
+def add_class(course_code, day, slot, class_type):
+    full_table[int(course_code[0])][days[day]][slots[slot]] = [course_code, class_type]
 
-assistants = [p.Professor("13", "Ahmed Mohamed", "101", "301", "301"),
-              p.Professor("14", "Hassan Ali",    "102", "302", "301"),
-              p.Professor("15", "Mohamed Ibrahim", "103", "303", "301"),
-              p.Professor("16", "Omar Samir",    "104", "304", "301"),
-              p.Professor("17", "Khaled Ahmed",  "105", "305", "301"),
-              p.Professor("18", "Amr Hossam",    "106", "306", "301"),
-              p.Professor("19", "Ali Mahmoud",   "201", "401", "301"),
-              p.Professor("20", "Tarek Hassan",  "202", "402", "301"),
-              p.Professor("21", "Mahmoud Sami",  "203", "403", "301"),
-              p.Professor("22", "Youssef Ahmed", "204", "404", "301"),
-              p.Professor("23", "Karim Mohamed", "205", "405", "301"),
-              p.Professor("24", "Mamdouh Adel",  "206", "406", "301")]
+def check_table_free(level, day, slot):
+    if full_table[level][days[day]][slots[slot]] == None:
+        return True
+    else:
+        return False
 
-courses = [c.Course("101", "Introduction to Programming", 2, 2, 1),
-           c.Course("102", "Data Structures and Algorithms", 2, 2, 1),
-           c.Course("103", "Database Management Systems", 2, 2, 1),
-           c.Course("104", "Computer Networks", 2, 2, 1),
-           c.Course("105", "Operating Systems", 2, 2, 1),
-           c.Course("106", "Software Engineering", 2, 2, 1),
-           c.Course("201", "Cybersecurity Basics", 2, 2, 1),
-           c.Course("202", "Web Development Fundamentals", 2, 2, 1),
-           c.Course("203", "Artificial Intelligence Concepts", 2, 2, 1),
-           c.Course("204", "Machine Learning Applications", 2, 2, 1),
-           c.Course("205", "Data Science Essentials", 2, 2, 1),
-           c.Course("206", "Network Security Protocols", 2, 2, 1),
-           c.Course("301", "Introduction to Cryptography", 2, 2, 1),
-           c.Course("302", "Web Development Advanced", 2, 2, 1),
-           c.Course("303", "Advanced AI Concepts", 2, 2, 1),
-           c.Course("304", "Advanced Machine Learning", 2, 2, 1),
-           c.Course("305", "Advanced Data Science", 2, 2, 1),
-           c.Course("306", "Advanced Network Security", 2, 2, 1),
-           c.Course("401", "Advanced Cryptography", 2, 2, 1),
-           c.Course("402", "Cloud Computing", 2, 2, 1),
-           c.Course("403", "Computer Vision", 2, 2, 1),
-           c.Course("404", "Advanced Robotics", 2, 2, 1),
-           c.Course("405", "Natural Language Processing", 2, 2, 1),
-           c.Course("406", "Cyber-Physical Systems", 2, 2, 1)]
-
-# levels = [l.Level("1", 2),
-#           l.level("2", 2),
-#           l.level("3", 2),
-#           l.level("4", 2)]
+print(check_table_free(1, 1, 1))
+add_class("101", 1, 1, "lecture")
+print(check_table_free(1, 1, 1))
+print(full_table[1]["sat"]["slot_1"])

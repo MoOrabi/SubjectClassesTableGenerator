@@ -1,6 +1,6 @@
 import data_ as d
 import course_ as c
-from random import shuffle
+from random import randint
 
 
 def get_course(courses_list, course_code):
@@ -23,8 +23,22 @@ def check_all_courses_assigned_assis(courses_list):
     return True
 
 
-# ************************* Start main *************************
+def get_level_courses(courses_list, level_num):
+    courses_level = [course for course in courses_list if course.get_code()[0] == str(level_num)]
+    return courses_level
 
+
+def add_class(course_code, day, slot, class_type):
+    # day, slot should be numbers
+    d.full_table[int(course_code[0])][days[day]][slots[slot]] = [course_code, class_type]
+
+def check_table_free(level, day, slot):
+    if d.full_table[level][days[day]][slots[slot]] == None:
+        return True
+    else:
+        return False
+
+# ************************* Start main *************************
 
 # assign professors to courses
 while not check_all_courses_assigned_prof(d.courses):
@@ -60,5 +74,20 @@ while not check_all_courses_assigned_assis(d.courses):
                 else:
                     print("Can't find courses for assistant", assistant)
 
+# assign courses of level_1 to its table
+level_1_courses = get_level_courses(d.courses, 1)
+for course in level_1_courses:
+    day = randint(1, 6)
+    slot = randint(1, 5)
+    # while()
+
+
+
+
+
+
+
 for course in d.courses:
     print(course)
+print("*" * 40)
+
