@@ -8,25 +8,27 @@ def choose_time_for_class(level_times):
     return {"day": "", "time": ""}
 
 
-def get_least_busy_prof(preferred_professors):
+def get_suitable_faculty_member(preferred_members):
     return ""
 
 
-def put_lectures_classes(course_name, course_code, number_of_lectures, preferred_professors, level_classes, level_times):
+def put_lectures_classes(course_name, course_code, number_of_lectures, preferred_professors,
+                         level_classes, level_times):
     for i in range(number_of_lectures):
         chooses_day_and_time = choose_time_for_class(level_times)
-        professor = get_least_busy_prof(preferred_professors)
+        professor = get_suitable_faculty_member(preferred_professors)
         subject_class = {"course_name": course_name, "course_code": course_code,
                          "type_of_class": "Lecture", "faculty_member": professor,
                          "day": chooses_day_and_time.get("day"), "time": chooses_day_and_time.get("time")}
-        level_times.append({"day":chooses_day_and_time.get("day"), "time": chooses_day_and_time.get("time")})
+        level_times.append({"day": chooses_day_and_time.get("day"), "time": chooses_day_and_time.get("time")})
         level_classes.append(subject_class)
 
 
-def put_sections_classes(course_name, course_code, number_of_sections, preferred_assistants, level_classes, level_times):
+def put_sections_classes(course_name, course_code, number_of_sections, preferred_assistants,
+                         level_classes, level_times):
     for i in range(number_of_sections):
         chooses_day_and_time = choose_time_for_class(level_times)
-        assistant = get_least_busy_prof(preferred_assistants)
+        assistant = get_suitable_faculty_member(preferred_assistants)
         subject_class = {"course_name": course_name, "course_code": course_code,
                          "type_of_class": "Section", "faculty_member": assistant,
                          "day": chooses_day_and_time.get("day"), "time": chooses_day_and_time.get("time")}
@@ -37,7 +39,7 @@ def put_sections_classes(course_name, course_code, number_of_sections, preferred
 def put_labs_classes(course_name, course_code, number_of_labs, preferred_assistants, level_classes, level_times):
     for i in range(number_of_labs):
         chooses_day_and_time = choose_time_for_class(level_times)
-        assistant = get_least_busy_prof(preferred_assistants)
+        assistant = get_suitable_faculty_member(preferred_assistants)
         subject_class = {"course_name": course_name, "course_code": course_code,
                          "type_of_class": "Lab", "faculty_member": assistant,
                          "day": chooses_day_and_time.get("day"), "time": chooses_day_and_time.get("time")}
@@ -49,9 +51,9 @@ def assign_classes_to_course(level_times, level_classes, course):
     put_lectures_classes(course.course_name, course.course_code,
                          course.number_of_lectures, course.preferred_professors, level_classes, level_times)
     put_sections_classes(course.course_name, course.course_code,
-                         course.number_of_sections, course.preferred_assistants,level_classes, level_times)
+                         course.number_of_sections, course.preferred_assistants, level_classes, level_times)
     put_labs_classes(course.course_name, course.course_code,
-                     course.number_of_labs, course.preferred_assistants,level_classes, level_times)
+                     course.number_of_labs, course.preferred_assistants, level_classes, level_times)
 
 
 def add_classes_to_level(level_times, level_classes, level_courses):

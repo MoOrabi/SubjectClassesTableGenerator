@@ -77,7 +77,7 @@ level2_courses_list = [
      ["Mahmoud Sami", "Youssef Ahmed", "Karim Mohamed"],
      ["Mamdouh Adel", "Ahmad Salah", "Adham Mostafa"]],
     ["Network Security Protocols", "212", 1, 2, 2,
-     ["Ali Mahmoud", "Tarek Hassan","Mahmoud Sami"],
+     ["Ali Mahmoud", "Tarek Hassan", "Mahmoud Sami"],
      ["Karim Mohamed", "Mamdouh Adel", "Ahmad Salah"]]
 ]
 
