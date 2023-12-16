@@ -1,6 +1,5 @@
-import professor_ as p
+import faculty_member_ as p
 import course_ as c
-import level_ as l
 
 full_table = {1: {"sat": {"slot_1": None,
                           "slot_2": None,
@@ -136,31 +135,31 @@ days = {1: "sat",
         5: "wed",
         6: "thu"}
 
-professors = [p.faculty_member("1", "Ahmed Mohamed", "101", "301", "305"),
-              p.faculty_member("2", "Hassan Ali", "102", "302", "301"),
-              p.faculty_member("3", "Mohamed Ibrahim", "103", "303", "301"),
-              p.faculty_member("4", "Omar Samir", "104", "304", "301"),
-              p.faculty_member("5", "Khaled Ahmed", "105", "305", "301"),
-              p.faculty_member("6", "Amr Hossam", "106", "306", "301"),
-              p.faculty_member("7", "Ali Mahmoud", "201", "401", "301"),
-              p.faculty_member("8", "Tarek Hassan", "202", "402", "301"),
-              p.faculty_member("9", "Mahmoud Sami", "203", "403", "301"),
-              p.faculty_member("10", "Youssef Ahmed", "204", "404", "301"),
-              p.faculty_member("11", "Karim Mohamed", "205", "405", "301"),
-              p.faculty_member("12", "Mamdouh Adel", "206", "406", "301")]
+professors = [p.Faculty_member("1", "Ahmed Mohamed", "101", "301", "305"),
+              p.Faculty_member("2", "Hassan Ali", "102", "302", "301"),
+              p.Faculty_member("3", "Mohamed Ibrahim", "103", "303", "301"),
+              p.Faculty_member("4", "Omar Samir", "104", "304", "301"),
+              p.Faculty_member("5", "Khaled Ahmed", "105", "305", "301"),
+              p.Faculty_member("6", "Amr Hossam", "106", "306", "301"),
+              p.Faculty_member("7", "Ali Mahmoud", "201", "401", "301"),
+              p.Faculty_member("8", "Tarek Hassan", "202", "402", "301"),
+              p.Faculty_member("9", "Mahmoud Sami", "203", "403", "301"),
+              p.Faculty_member("10", "Youssef Ahmed", "204", "404", "301"),
+              p.Faculty_member("11", "Karim Mohamed", "205", "405", "301"),
+              p.Faculty_member("12", "Mamdouh Adel", "206", "406", "301")]
 
-assistants = [p.faculty_member("13", "Ahmad Salah", "101", "301", "301"),
-              p.faculty_member("14", "Adham Mostafa", "102", "302", "301"),
-              p.faculty_member("15", "Hisham Amr", "103", "303", "301"),
-              p.faculty_member("16", "Wael Mahmoud", "104", "304", "301"),
-              p.faculty_member("17", "Mazen Samy", "105", "305", "301"),
-              p.faculty_member("18", "Hamza Sherif", "106", "306", "301"),
-              p.faculty_member("19", "Mohsen Ali", "201", "401", "301"),
-              p.faculty_member("20", "Sherif Ezzat", "202", "402", "301"),
-              p.faculty_member("21", "Nabil Tawfiq", "203", "403", "301"),
-              p.faculty_member("22", "Tamer Adel", "204", "404", "301"),
-              p.faculty_member("23", "Hany Youssef", "205", "405", "301"),
-              p.faculty_member("24", "Ali Madkour", "206", "406", "301")]
+assistants = [p.Faculty_member("13", "Ahmad Salah", "101", "301", "301"),
+              p.Faculty_member("14", "Adham Mostafa", "102", "302", "301"),
+              p.Faculty_member("15", "Hisham Amr", "103", "303", "301"),
+              p.Faculty_member("16", "Wael Mahmoud", "104", "304", "301"),
+              p.Faculty_member("17", "Mazen Samy", "105", "305", "301"),
+              p.Faculty_member("18", "Hamza Sherif", "106", "306", "301"),
+              p.Faculty_member("19", "Mohsen Ali", "201", "401", "301"),
+              p.Faculty_member("20", "Sherif Ezzat", "202", "402", "301"),
+              p.Faculty_member("21", "Nabil Tawfiq", "203", "403", "301"),
+              p.Faculty_member("22", "Tamer Adel", "204", "404", "301"),
+              p.Faculty_member("23", "Hany Youssef", "205", "405", "301"),
+              p.Faculty_member("24", "Ali Madkour", "206", "406", "301")]
 
 courses = [c.Course("101", "Introduction to Programming", 2, 2, 1),
            c.Course("102", "Data Structures and Algorithms", 2, 2, 1),
@@ -187,7 +186,4 @@ courses = [c.Course("101", "Introduction to Programming", 2, 2, 1),
            c.Course("405", "Natural Language Processing", 2, 2, 1),
            c.Course("406", "Cyber-Physical Systems", 2, 2, 1)]
 
-# levels = [l.Level("1", 2),
-#           l.level("2", 2),
-#           l.level("3", 2),
-#           l.level("4", 2)]
+

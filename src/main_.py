@@ -1,9 +1,6 @@
 import data_ as d
-import course_ as c
 from random import randint
-from pprint import pprint
-
-from src.professor_ import faculty_member
+from src.faculty_member_ import Faculty_member
 
 
 def get_course(courses_list, course_code):
