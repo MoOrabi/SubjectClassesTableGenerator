@@ -1,6 +1,7 @@
 import data_ as d
 from random import randint
 from src.faculty_member_ import Faculty_member
+from pprint import pprint
 
 
 def get_course(courses_list, course_code):
@@ -178,10 +179,10 @@ def get_full_table():
                 list_of_classes.append(subject_class)
     return list_of_classes
 
-# pprint(get_full_table())
+pprint(get_full_table())
 
 
 # pprint(get_table_by_faculty_member("Dr.Amr Hossam"))
-pprint(get_table_by_level(2))
+# pprint(get_table_by_level(2))
 
 
