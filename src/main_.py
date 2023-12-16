@@ -3,6 +3,8 @@ import course_ as c
 from random import randint
 from pprint import pprint
 
+from src.professor_ import faculty_member
+
 
 def get_course(courses_list, course_code):
     for course in courses_list:
@@ -115,14 +117,50 @@ assign_classes_to_courses(4, "lab")
 
 
 
+def get_professor_by_id(prof_id):
+    for professor in d.professors:
+        if professor.get_id() == prof_id:
+            return professor
+
+
+def get_assistant_by_id(assis_id):
+    for assis in d.assistants:
+        if assis.get_id() == assis_id:
+            return assis
+
+
+def get_course_by_code(course_code):
+    for course in d.courses:
+        if course.get_code() == course_code:
+            return course
+
 
 # print courses data to verify that all courses have professors and assisstants
-for course in d.courses:
-    print(course)
+# for course in d.courses:
+#     print(course)
+#
+# print("*" * 40)
+#
+# # print the full table to check if table is ok
+# pprint(d.full_table)
 
-print("*" * 40)
+for level in d.full_table:
+    for day in d.full_table[level]:
+        day_slots = d.full_table[level][day]
+        for slot in day_slots:
+            course_code = d.full_table[level][day][slot][0]
+            course = get_course_by_code(course_code)
+            chosen_prof = get_professor_by_id(course.get_preferred_professor())
+            chosen_assis = get_assistant_by_id(course.get_preferred_assistant())
+            member = ""
+            if d.full_table[level][day][slot][1] == "lecture":
+                member = chosen_prof
+            else:
+                member = chosen_assis
+            print(day, slot, course.course_name, d.full_table[level][day][slot][1], member.get_name())
 
-# print the full table to check if table is ok
-pprint(d.full_table)
+
+
+
 
 

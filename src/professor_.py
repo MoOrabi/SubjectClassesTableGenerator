@@ -1,4 +1,4 @@
-class Professor:
+class faculty_member:
     def __init__(self, id, name, first_course_code, second_course_code, third_course_code):
         self.id = id
         self.name = name
