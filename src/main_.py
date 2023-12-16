@@ -144,23 +144,47 @@ def get_course_by_code(course_code):
 # # print the full table to check if table is ok
 # pprint(d.full_table)
 
-for level in d.full_table:
-    for day in d.full_table[level]:
-        day_slots = d.full_table[level][day]
-        for slot in day_slots:
-            course_code = d.full_table[level][day][slot][0]
-            course = get_course_by_code(course_code)
-            chosen_prof = get_professor_by_id(course.get_preferred_professor())
-            chosen_assis = get_assistant_by_id(course.get_preferred_assistant())
-            member = ""
-            if d.full_table[level][day][slot][1] == "lecture":
-                member = chosen_prof
-            else:
-                member = chosen_assis
-            print(day, slot, course.course_name, d.full_table[level][day][slot][1], member.get_name())
+def get_table_by_faculty_member(faculty_member_name):
+    list_of_classes = []
+    full_table_classes = get_full_table()
+    for subject_class in full_table_classes:
+        if subject_class[5] == faculty_member_name:
+            list_of_classes.append(subject_class)
+    return list_of_classes
 
 
+def get_table_by_level(level):
+    list_of_classes = []
+    full_table_classes = get_full_table()
+    for subject_class in full_table_classes:
+        if subject_class[2] == level:
+            list_of_classes.append(subject_class)
+    return list_of_classes
 
 
+def get_full_table():
+    list_of_classes = []
+    for level in d.full_table:
+        for day in d.full_table[level]:
+            day_slots = d.full_table[level][day]
+            for slot in day_slots:
+                course_code = d.full_table[level][day][slot][0]
+                course = get_course_by_code(course_code)
+                chosen_prof = get_professor_by_id(course.get_preferred_professor())
+                chosen_assis = get_assistant_by_id(course.get_preferred_assistant())
+                member = ""
+                if d.full_table[level][day][slot][1] == "lecture":
+                    member = "Dr." + chosen_prof.get_name()
+                else:
+                    member = "Eng." + chosen_assis.get_name()
+                subject_class = [day, slot, level, course.course_name, d.full_table[level][day][slot][1], member]
+                list_of_classes.append(subject_class)
+    return list_of_classes
+
+# pprint(get_full_table())
+
+
+# pprint(get_table_by_faculty_member("Dr.Amr Hossam"))
+pprint(get_table_by_level(2))
 
 
