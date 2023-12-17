@@ -1,7 +1,80 @@
-import data_ as d
+import src.data_ as d
 from random import randint
 from src.faculty_member_ import Faculty_member
 from pprint import pprint
+from src.GUI import *
+
+
+
+
+elist = [
+    ("000000000100000000020000000003"+"\n"+"gg"+"\n"+"fghgythkr", "Name", "City", "Age","Ali"),
+    ("Vanessa", "Gorge", "California", "California", "Chicago"),
+    ("Karachi", "Maria", "New York", "Maria", "Harry"),
+    ("Ali", "Albert", "Berlin", "Name","Boston"),
+    ("Boston", "Harry", "Chicago","Ali", "Name"),
+    ("ID", "Name", "City", "Age", "Berlin"),
+    ("Vanessa", "Gorge", "California", "California", "Albert"),
+    ("Karachi", "Maria", "New York", "Maria","Ali"),
+    ("Ali", "Albert", "Berlin", "Name", "Maria"),
+    ("Boston", "Harry", "Chicago","Ali", "New York"),
+    ("ID", "Name", "City", "Age", "Maria"),
+    ("Vanessa", "Gorge", "California", "California","Karachi"),
+    ("ID", "Name", "City", "Age","Ali"),
+    ("Vanessa", "Gorge", "California", "California", "Chicago"),
+    ("Karachi", "Maria", "New York", "Maria", "Harry"),
+    ("Ali", "Albert", "Berlin", "Name","Boston"),
+    ("Boston", "Harry", "Chicago","Ali", "Name"),
+    ("ID", "Name", "City", "Age", "Berlin"),
+    ("Vanessa", "Gorge", "California", "California", "Albert"),
+    ("Karachi", "Maria", "New York", "Maria","Ali"),
+    ("Ali", "Albert", "Berlin", "Name", "Maria"),
+    ("Boston", "Harry", "Chicago","Ali", "New York"),
+    ("ID", "Name", "City", "Age", "Maria"),
+    ("Vanessa", "Gorge", "California", "California","Karachi")
+]   
+
+def func():
+    table.edit_item(row=0, column=2, value="ggggggggg")
+      
+root = tk.Tk()
+root.title('PythonProject')
+root.wm_minsize(1366, 768)
+root.wm_maxsize(1366, 768)
+root['bg'] = '#ffffff'
+window = tk.Label(root, width=str(1366), height=str(768))
+window.place(x=0, y=0)
+
+
+ 
+# create root window
+
+table = LabelTable(window,list=elist)
+btn1 = RoundedButton(root, text="view", border_radius=10, padding=20, command=func, color="#172f5f")          
+btn1.place(x=1200,y=390)
+
+
+root.mainloop()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 def get_faculty_members_data(professors_file_path, assisstants_file_path):

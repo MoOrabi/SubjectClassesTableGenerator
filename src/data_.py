@@ -1,5 +1,5 @@
-import faculty_member_ as p
-import course_ as c
+import src.faculty_member_ as p
+import src.course_ as c
 
 full_table = {1: {"sat": {"slot_1": None,
                           "slot_2": None,
