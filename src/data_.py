@@ -135,55 +135,10 @@ days = {1: "sat",
         5: "wed",
         6: "thu"}
 
-professors = [p.Faculty_member("1", "Ahmed Mohamed", "101", "301", "305"),
-              p.Faculty_member("2", "Hassan Ali", "102", "302", "301"),
-              p.Faculty_member("3", "Mohamed Ibrahim", "103", "303", "301"),
-              p.Faculty_member("4", "Omar Samir", "104", "304", "301"),
-              p.Faculty_member("5", "Khaled Ahmed", "105", "305", "301"),
-              p.Faculty_member("6", "Amr Hossam", "106", "306", "301"),
-              p.Faculty_member("7", "Ali Mahmoud", "201", "401", "301"),
-              p.Faculty_member("8", "Tarek Hassan", "202", "402", "301"),
-              p.Faculty_member("9", "Mahmoud Sami", "203", "403", "301"),
-              p.Faculty_member("10", "Youssef Ahmed", "204", "404", "301"),
-              p.Faculty_member("11", "Karim Mohamed", "205", "405", "301"),
-              p.Faculty_member("12", "Mamdouh Adel", "206", "406", "301")]
+professors = []
 
-assistants = [p.Faculty_member("13", "Ahmad Salah", "101", "301", "301"),
-              p.Faculty_member("14", "Adham Mostafa", "102", "302", "301"),
-              p.Faculty_member("15", "Hisham Amr", "103", "303", "301"),
-              p.Faculty_member("16", "Wael Mahmoud", "104", "304", "301"),
-              p.Faculty_member("17", "Mazen Samy", "105", "305", "301"),
-              p.Faculty_member("18", "Hamza Sherif", "106", "306", "301"),
-              p.Faculty_member("19", "Mohsen Ali", "201", "401", "301"),
-              p.Faculty_member("20", "Sherif Ezzat", "202", "402", "301"),
-              p.Faculty_member("21", "Nabil Tawfiq", "203", "403", "301"),
-              p.Faculty_member("22", "Tamer Adel", "204", "404", "301"),
-              p.Faculty_member("23", "Hany Youssef", "205", "405", "301"),
-              p.Faculty_member("24", "Ali Madkour", "206", "406", "301")]
+assistants = []
 
-courses = [c.Course("101", "Introduction to Programming", 2, 2, 1),
-           c.Course("102", "Data Structures and Algorithms", 2, 2, 1),
-           c.Course("103", "Database Management Systems", 2, 2, 1),
-           c.Course("104", "Computer Networks", 2, 2, 1),
-           c.Course("105", "Operating Systems", 2, 2, 1),
-           c.Course("106", "Software Engineering", 2, 2, 1),
-           c.Course("201", "Cybersecurity Basics", 2, 2, 1),
-           c.Course("202", "Web Development Fundamentals", 2, 2, 1),
-           c.Course("203", "Artificial Intelligence Concepts", 2, 2, 1),
-           c.Course("204", "Machine Learning Applications", 2, 2, 1),
-           c.Course("205", "Data Science Essentials", 2, 2, 1),
-           c.Course("206", "Network Security Protocols", 2, 2, 1),
-           c.Course("301", "Introduction to Cryptography", 2, 2, 1),
-           c.Course("302", "Web Development Advanced", 2, 2, 1),
-           c.Course("303", "Advanced AI Concepts", 2, 2, 1),
-           c.Course("304", "Advanced Machine Learning", 2, 2, 1),
-           c.Course("305", "Advanced Data Science", 2, 2, 1),
-           c.Course("306", "Advanced Network Security", 2, 2, 1),
-           c.Course("401", "Advanced Cryptography", 2, 2, 1),
-           c.Course("402", "Cloud Computing", 2, 2, 1),
-           c.Course("403", "Computer Vision", 2, 2, 1),
-           c.Course("404", "Advanced Robotics", 2, 2, 1),
-           c.Course("405", "Natural Language Processing", 2, 2, 1),
-           c.Course("406", "Cyber-Physical Systems", 2, 2, 1)]
+courses = []
 
 

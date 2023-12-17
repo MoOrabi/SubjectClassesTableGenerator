@@ -1,4 +1,3 @@
-# from data_ import courses
 
 class Course:
     def __init__(self, course_code, course_name, number_of_lectures, number_of_sections, number_of_labs,

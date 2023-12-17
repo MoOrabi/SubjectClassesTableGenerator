@@ -1,0 +1,24 @@
+101, Introduction to Programming, 2, 2, 1
+102, Data Structures and Algorithms, 2, 2, 1
+103, Database Management Systems, 2, 2, 1
+104, Computer Networks, 2, 2, 1
+105, Operating Systems, 2, 2, 1
+106, Software Engineering, 2, 2, 1
+201, Cybersecurity Basics, 2, 2, 1
+202, Web Development Fundamentals, 2, 2, 1
+203, Artificial Intelligence Concepts, 2, 2, 1
+204, Machine Learning Applications, 2, 2, 1
+205, Data Science Essentials, 2, 2, 1
+206, Network Security Protocols, 2, 2, 1
+301, Introduction to Cryptography, 2, 2, 1
+302, Web Development Advanced, 2, 2, 1
+303, Advanced AI Concepts, 2, 2, 1
+304, Advanced Machine Learning, 2, 2, 1
+305, Advanced Data Science, 2, 2, 1
+306, Advanced Network Security, 2, 2, 1
+401, Advanced Cryptography, 2, 2, 1
+402, Cloud Computing, 2, 2, 1
+403, Computer Vision, 2, 2, 1
+404, Advanced Robotics, 2, 2, 1
+405, Natural Language Processing, 2, 2, 1
+406, Cyber-Physical Systems, 2, 2, 1

@@ -4,6 +4,23 @@ from src.faculty_member_ import Faculty_member
 from pprint import pprint
 
 
+def get_faculty_members_data(professors_file_path, assisstants_file_path):
+    lines = [line.strip() for line in open(professors_file_path)]
+    for item in lines:
+        temp = item.split(", ")
+        d.professors.append(d.p.Faculty_member(temp[0], temp[1], temp[2], temp[3], temp[4]))
+    lines = [line.strip() for line in open(assisstants_file_path)]
+    for item in lines:
+        temp = item.split(", ")
+        d.assistants.append(d.p.Faculty_member(temp[0], temp[1], temp[2], temp[3], temp[4]))
+
+
+def get_courses_data(courses_file_path):
+    lines = [line.strip() for line in open(courses_file_path)]
+    for item in lines:
+        temp = item.split(", ")
+        d.courses.append(d.c.Course(temp[0], temp[1], int(temp[2]), int(temp[3]), int(temp[4])))
+
 def get_course(courses_list, course_code):
     for course in courses_list:
         if course.get_code() == course_code:
@@ -61,6 +78,10 @@ def assign_classes_to_courses(level, class_type):
 # ************************* Start main *************************
 
 # assign professors to courses
+
+get_faculty_members_data("professors.txt", "assisstants.txt")
+get_courses_data("courses.txt")
+
 while not check_all_courses_assigned_prof(d.courses):
     for prof in d.professors:
         course = get_course(d.courses, prof.get_first_well_code())
