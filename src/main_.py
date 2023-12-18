@@ -1,8 +1,26 @@
-import data_ as d
+import src.data_ as d
 from random import randint
 from src.faculty_member_ import Faculty_member
 from pprint import pprint
+from src.GUI import *
 
+
+def get_faculty_members_data(professors_file_path, assisstants_file_path):
+    lines = [line.strip() for line in open(professors_file_path)]
+    for item in lines:
+        temp = item.split(", ")
+        d.professors.append(d.p.Faculty_member(temp[0], temp[1], temp[2], temp[3], temp[4]))
+    lines = [line.strip() for line in open(assisstants_file_path)]
+    for item in lines:
+        temp = item.split(", ")
+        d.assistants.append(d.p.Faculty_member(temp[0], temp[1], temp[2], temp[3], temp[4]))
+
+
+def get_courses_data(courses_file_path):
+    lines = [line.strip() for line in open(courses_file_path)]
+    for item in lines:
+        temp = item.split(", ")
+        d.courses.append(d.c.Course(temp[0], temp[1], int(temp[2]), int(temp[3]), int(temp[4])))
 
 def get_course(courses_list, course_code):
     for course in courses_list:
@@ -61,6 +79,10 @@ def assign_classes_to_courses(level, class_type):
 # ************************* Start main *************************
 
 # assign professors to courses
+
+get_faculty_members_data("professors.txt", "assisstants.txt")
+get_courses_data("courses.txt")
+
 while not check_all_courses_assigned_prof(d.courses):
     for prof in d.professors:
         course = get_course(d.courses, prof.get_first_well_code())
@@ -179,10 +201,63 @@ def get_full_table():
                 list_of_classes.append(subject_class)
     return list_of_classes
 
-pprint(get_full_table())
+# pprint(get_full_table())
 
 
 # pprint(get_table_by_faculty_member("Dr.Amr Hossam"))
 # pprint(get_table_by_level(2))
+
+
+level1_list = get_table_by_level(1)
+level2_list = get_table_by_level(2)
+level3_list = get_table_by_level(3)
+level4_list = get_table_by_level(4)
+
+pprint(level1_list)
+
+elist = []
+
+for i in range(0, len(level1_list), 5):
+    elist.append((level1_list[i][3]+"\n"+level1_list[i][4]+"\n"+level1_list[i][5],
+                  level1_list[i+1][3]+"\n"+level1_list[i+1][4]+"\n"+level1_list[i+1][5],
+                  level1_list[i+2][3]+"\n"+level1_list[i+2][4]+"\n"+level1_list[i+2][5],
+                  level1_list[i+3][3]+"\n"+level1_list[i+3][4]+"\n"+level1_list[i+3][5],
+                  level1_list[i+4][3]+"\n"+level1_list[i+4][4]+"\n"+level1_list[i+4][5]))
+    elist.append((level2_list[i][3] + "\n" + level2_list[i][4] + "\n" + level2_list[i][5],
+                  level2_list[i + 1][3] + "\n" + level2_list[i + 1][4] + "\n" + level2_list[i+1][5],
+                  level2_list[i + 2][3] + "\n" + level2_list[i + 2][4] + "\n" + level2_list[i+2][5],
+                  level2_list[i + 3][3] + "\n" + level2_list[i + 3][4] + "\n" + level2_list[i+3][5],
+                  level2_list[i + 4][3] + "\n" + level2_list[i + 4][4] + "\n" + level2_list[i+4][5]))
+    elist.append((level3_list[i][3] + "\n" + level3_list[i][4] + "\n" + level3_list[i][5],
+                  level3_list[i + 1][3] + "\n" + level3_list[i + 1][4] + "\n" + level3_list[i+1][5],
+                  level3_list[i + 2][3] + "\n" + level3_list[i + 2][4] + "\n" + level3_list[i+2][5],
+                  level3_list[i + 3][3] + "\n" + level3_list[i + 3][4] + "\n" + level3_list[i+3][5],
+                  level3_list[i + 4][3] + "\n" + level3_list[i + 4][4] + "\n" + level3_list[i+4][5]))
+    elist.append((level4_list[i][3] + "\n" + level4_list[i][4] + "\n" + level4_list[i][5],
+                  level4_list[i + 1][3] + "\n" + level4_list[i + 1][4] + "\n" + level4_list[i+1][5],
+                  level4_list[i + 2][3] + "\n" + level4_list[i + 2][4] + "\n" + level4_list[i+2][5],
+                  level4_list[i + 3][3] + "\n" + level4_list[i + 3][4] + "\n" + level4_list[i+3][5],
+                  level4_list[i + 4][3] + "\n" + level4_list[i + 4][4] + "\n" + level4_list[i+4][5]))
+
+
+def func():
+    table.edit_item(row=0, column=2, value="ggggggggg")
+
+
+root = tk.Tk()
+root.title('PythonProject')
+root.wm_minsize(1366, 768)
+root.wm_maxsize(1366, 768)
+root['bg'] = '#ffffff'
+window = tk.Label(root, width=str(1366), height=str(768))
+window.place(x=0, y=0)
+
+# create root window
+
+table = LabelTable(window, list=elist)
+btn1 = RoundedButton(root, text="view", border_radius=10, padding=20, command=func, color="#172f5f")
+btn1.place(x=1200, y=390)
+
+root.mainloop()
 
 
