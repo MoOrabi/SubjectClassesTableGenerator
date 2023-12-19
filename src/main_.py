@@ -2,7 +2,7 @@ import src.data_ as d
 from random import randint
 from src.faculty_member_ import Faculty_member
 from pprint import pprint
-from src.GUI import *
+from src.gui import *
 
 
 def get_faculty_members_data(professors_file_path, assisstants_file_path):
