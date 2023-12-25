@@ -2,7 +2,8 @@ import src.data_ as d
 from random import randint
 from src.faculty_member_ import Faculty_member
 from pprint import pprint
-from src.gui import *
+from GUI import *
+import tkinter as tk
 
 
 def get_faculty_members_data(professors_file_path, assisstants_file_path):
