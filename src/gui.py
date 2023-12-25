@@ -138,7 +138,7 @@ class LabelTable():
         d=['09:00-10:30','10:30-12:00','12:00-01:30','01:30-03:00','03:00-04:30']
        
         # Create a canvas widget to display the table
-        self.canvas = Canvas(gui, width=1100, height=600)
+        self.canvas = Canvas(gui, width=1300, height=700)
         self.canvas.pack(side=LEFT, fill=BOTH, expand=True)
 
         # Create a scrollbar widget and attach it to the canvas
@@ -147,67 +147,71 @@ class LabelTable():
         self.canvas.configure(yscrollcommand=self.scrollbar.set)
 
         # Create a frame widget to hold the labels
-        self.frame = Frame(self.canvas)
-        self.canvas.create_window((0,0), window=self.frame, anchor=NW)
+        self.frame = Frame(self.canvas, bg='white')
+        self.canvas.create_window((0, 0), window=self.frame, anchor=NW)
 
         # An approach for creating the table
-        row0=0
-        for i in range(0,25,+4):
-            if i == 0 :
+        row0 = 0
+        for i in range(0, 25, +4):
+            if i == 0:
                 self.label = Label(
                             self.frame, # Change the parent widget to the frame
                             text=l[row0],
-                            width=8,height=2,
+                            width=9, height=2,
                             fg="Black",
-                            font=("Arial",20, "bold")
+                            font=("Arial", 20, "bold"),
+                            bg="white"
                         )
             else :
                 self.label = Label(
                                 self.frame, # Change the parent widget to the frame
                                 text=l[row0],
-                                width=8,height=8,
-                                fg="Black",
-                                font=("Arial",20, "bold")
+                                width=9, height=8,
+                                fg="#333333",
+                                font=("Arial", 20, "bold"),
+                                bg="#3498db"
                             )
             self.label['borderwidth'] = 1
             self.label['relief'] = GROOVE
             self.label.grid(row=i, column=0, rowspan=4)
-            row0=row0+1
+            row0 = row0+1
             
-        col0=0 
-        for i in range(1,6):
+        col0 = 0
+        for i in range(1, 6):
             
             self.label = Label(
                             self.frame, # Change the parent widget to the frame
                             text=d[col0],
-                            width=11,height=2,
-                            fg="Black",
-                            font=("Arial",20, "bold")
+                            width=13, height=2,
+                            fg="#333333",
+                            font=("Arial", 20, "bold"),
+                            bg="#3498db"
                         )
             self.label['borderwidth'] = 1
             self.label['relief'] = GROOVE
             self.label.grid(row=0, column=i)
-            col0=col0+1
+            col0 = col0+1
         
         self.labels = []
-        row1=0
-        for i in range (4,28):
-            col=0
+        row1 = 0
+        for i in range(4, 28):
+            col = 0
             self.labels.append([])
-            for o in range(1,6):
+            for o in range(1, 6):
                 self.label = Label(
                             self.frame, # Change the parent widget to the frame
                             text=list[row1][col],
-                            width=27,height=3,
-                            fg="Black",
-                            font=("Arial",8, "bold")
+                            width=29, height=3,
+                            font=("Arial", 8, "bold"),
+                            bg="#f5f5f5",
+                            fg="#222222"
                         )
                 self.label['borderwidth'] = 1
                 self.label['relief'] = GROOVE
                 self.label.grid(row=i, column=o)
                 self.labels[-1].append(self.label)
-                col=col+1
-            row1=row1+1
+                col = col+1
+            row1 = row1+1
 
         # Update the canvas scrollregion to fit the frame
         self.canvas.update_idletasks()
@@ -223,93 +227,6 @@ class LabelTable():
         else:
             # Print an error message if the row or column are out of range
             print("Invalid row or column")
-        
-        
 
-
-'''
-def func():
-    table.edit_item(row=0, column=2, value="fgdfgrdfg")
-    
-
-        
-        
-                 
-elist = [
-    ("000000000100000000020000000003"+"\n"+"gg"+"\n"+"fghgythkr", "Name", "City", "Age","Ali"),
-    ("Vanessa", "Gorge", "California", "California", "Chicago"),
-    ("Karachi", "Maria", "New York", "Maria", "Harry"),
-    ("Ali", "Albert", "Berlin", "Name","Boston"),
-    ("Boston", "Harry", "Chicago","Ali", "Name"),
-    ("ID", "Name", "City", "Age", "Berlin"),
-    ("Vanessa", "Gorge", "California", "California", "Albert"),
-    ("Karachi", "Maria", "New York", "Maria","Ali"),
-    ("Ali", "Albert", "Berlin", "Name", "Maria"),
-    ("Boston", "Harry", "Chicago","Ali", "New York"),
-    ("ID", "Name", "City", "Age", "Maria"),
-    ("Vanessa", "Gorge", "California", "California","Karachi"),
-    ("ID", "Name", "City", "Age","Ali"),
-    ("Vanessa", "Gorge", "California", "California", "Chicago"),
-    ("Karachi", "Maria", "New York", "Maria", "Harry"),
-    ("Ali", "Albert", "Berlin", "Name","Boston"),
-    ("Boston", "Harry", "Chicago","Ali", "Name"),
-    ("ID", "Name", "City", "Age", "Berlin"),
-    ("Vanessa", "Gorge", "California", "California", "Albert"),
-    ("Karachi", "Maria", "New York", "Maria","Ali"),
-    ("Ali", "Albert", "Berlin", "Name", "Maria"),
-    ("Boston", "Harry", "Chicago","Ali", "New York"),
-    ("ID", "Name", "City", "Age", "Maria"),
-    ("Vanessa", "Gorge", "California", "California","Karachi")
-]   
-
-
-root = tk.Tk()
-root.title('PythonGuides')
-root.wm_minsize(1366, 768)
-root.wm_maxsize(1366, 768)
-root['bg'] = '#ffffff'
-window = tk.Label(root, width=str(1366), height=str(768))
-window.place(x=0, y=0)
-
-
- 
-# create root window
-
-table = LabelTable(window,list=elist)
-btn1 = RoundedButton(root, text="view", border_radius=10, padding=20, command=func, color="#172f5f")          
-btn1.place(x=1200,y=390)
-
-
-root.mainloop()
-
-'''
-
-'''  
-
-def func ():
-    table1 = Table(root, height=9, width=100,columns=6,rowheigh=30,style='2')
-    table1.place(x=360,y=30)
-    for i in range(6):
-        table1.insert_row((str(i+1),'N'*(i+1),str(20*(i+1)),'O'*(i+1), 'M'*(i+1) ,'P'*(i+1)  ))
-
-root = tk.Tk()
-root.geometry("1300x650")
-root.title('PythonGuides')
-root['bg'] = '#ffffff'
-
-table = Table(root, height=11, width=80,columns=6,rowheigh=20,style='1')
-table.place(x=50,y=30)
-
-btn1 = RoundedButton(root, text="view", border_radius=10, padding=20, command=func, color="red")          
-btn1.place(x=50,y=390)
-btn2 = RoundedButton(root, text="ggg", border_radius=10, padding=20, command=func, color="red")          
-btn2.place(x=200,y=390)
-
-for i in range(6):
-    table.insert_row((str(i+1),'N'*(i+1),str(20*(i+1)),'O'*(i+1), 'M'*(i+1) ,'P'*(i+1)  ))
-
-root.mainloop()
-
-'''
 
 

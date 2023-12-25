@@ -213,7 +213,7 @@ level2_list = get_table_by_level(2)
 level3_list = get_table_by_level(3)
 level4_list = get_table_by_level(4)
 
-pprint(level1_list)
+# pprint(level1_list)
 
 elist = []
 
@@ -249,14 +249,14 @@ root.title('PythonProject')
 root.wm_minsize(1366, 768)
 root.wm_maxsize(1366, 768)
 root['bg'] = '#ffffff'
-window = tk.Label(root, width=str(1366), height=str(768))
+window = tk.Label(root, width=str(1366), height=str(768), bg='blue')
 window.place(x=0, y=0)
 
 # create root window
 
 table = LabelTable(window, list=elist)
-btn1 = RoundedButton(root, text="view", border_radius=10, padding=20, command=func, color="#172f5f")
-btn1.place(x=1200, y=390)
+# btn1 = RoundedButton(root, text="view", border_radius=10, padding=20, command=func, color="#172f5f")
+# btn1.place(x=1200, y=390)
 
 root.mainloop()
 
